@@ -8,6 +8,7 @@ class ListTest {
     List oneElementList;
     List threeElementsList;
     List fullList;
+    List randomList;
 
     @BeforeEach
     void setup() {
@@ -27,6 +28,11 @@ class ListTest {
         fullList.add(2);
         fullList.add(1);
         fullList.add(0);
+
+        randomList = new List();
+        randomList.add(1);
+        randomList.add(2);
+        randomList.add(3);
     }
 
     @Test
@@ -43,7 +49,6 @@ class ListTest {
     void givenThreeElementsList_TryRemoveOneElement_ThenSuccess() {
         threeElementsList.remove(4);
         assertEquals(2, threeElementsList.size);
-
     }
 
     @Test
@@ -51,4 +56,8 @@ class ListTest {
         assertThrows(IndexOutOfBoundsException.class, () -> fullList.add(5));
     }
 
+    @Test
+    void givenRandomList_FindElementByIndex_ThenSuccess(){
+        assertEquals(3, randomList.element(2));
+    }
 }

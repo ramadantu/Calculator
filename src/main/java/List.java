@@ -27,4 +27,8 @@ public class List {
         array[indexOfElement] = array[size--];
     }
 
+    public int element(int index) {
+        return array[index];
+    }
+
 }
